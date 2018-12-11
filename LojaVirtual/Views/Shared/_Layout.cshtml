@@ -46,13 +46,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach (var item in ViewBag.Categoria)
                         {
-                        <a class="dropdown-item" href="#">SmartPhones</a>
-                        <a class="dropdown-item" href="#">Smart Tv</a>
-                        <a class="dropdown-item" href="#">Eletro Eletrônico</a>
-                        <a class="dropdown-item" href="#">Informática</a>
-                        <a class="dropdown-item" href="#">Games</a>
-                        <a class="dropdown-item" href="#">Eletrodomésticos</a>
-                        <a class="dropdown-item" href="#">Acessórios</a>
+                        <a class="dropdown-item" href="#">@item.Nome</a>
                         }
                     </div>
                 </li>
