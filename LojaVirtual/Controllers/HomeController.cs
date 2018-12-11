@@ -6,11 +6,22 @@ using System.Web.Mvc;
 
 namespace LojaVirtual.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        public ActionResult Index()
+        public ActionResult Index(int? Categoria)
         {
-            return View();
+            var model = new Models.HomeIndexViewModel();
+            model.Produtos = new Models.Produto[]
+            {
+                new Models.Produto("Iphone", 1, "CelularSamsung.png", 1),
+                new Models.Produto("TV Led", 2, "tv.png", 2),
+                new Models.Produto("Playstation 4", 3, "IPhone.jpg", 1),
+                new Models.Produto("Notebook Dell I7", 4, "Fritadeira.jpg", 3),
+            };
+          
+
+
+            return View(model);
         }
 
         public ActionResult About()
