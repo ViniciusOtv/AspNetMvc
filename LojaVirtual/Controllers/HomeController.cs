@@ -18,9 +18,7 @@ namespace LojaVirtual.Controllers
                 new Models.Produto("Playstation 4", 3, "IPhone.jpg", 1),
                 new Models.Produto("Notebook Dell I7", 4, "Fritadeira.jpg", 3),
             };
-          
-
-
+ 
             return View(model);
         }
 
