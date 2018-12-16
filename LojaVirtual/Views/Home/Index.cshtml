@@ -23,7 +23,7 @@ else
                 <img class="card-img-top img" src="@item.Imagem"
                      alt="Imagens dos Produtos">
                 <div class="card-body">
-                  @* <h5 class="card-title">@Model.NomeCategoria(item)</h5>*@
+                    @* <h5 class="card-title">@Model.NomeCategoria(item)</h5>*@
                     <h4 class="card-title">@item.Nome</h4>
                     <p class="card-text">
                         @item.Descricao
@@ -31,6 +31,7 @@ else
                     <p class="Preco" style="color: rgb(3, 168, 124)">
                         <b>R$@item.Preco</b>
                     </p>
+                    <a href="#" class="btn btn-primary" style="background-color: #00838F">Adicionar ao carrinho</a>
                 </div>
 
             </div>
