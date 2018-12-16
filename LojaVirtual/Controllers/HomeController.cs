@@ -8,7 +8,7 @@ namespace LojaVirtual.Controllers
 {
     public class HomeController : BaseController
     {
-        public ActionResult Index(int? Categoria)
+        public ActionResult Index(int? id)
         {
             var model = new Models.HomeIndexViewModel();
             model.Produtos = new Models.Produto[]
