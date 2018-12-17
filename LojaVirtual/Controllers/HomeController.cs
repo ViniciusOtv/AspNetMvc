@@ -21,7 +21,6 @@ namespace LojaVirtual.Controllers
                 new Models.Produto("Geladeira", 4, "Geladeira.jpg", 3),
                 new Models.Produto("SmartTv", 4, "tv.jpg", 3),
             };
-
             return View(model);
         }
 
