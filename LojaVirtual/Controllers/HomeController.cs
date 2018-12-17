@@ -8,22 +8,32 @@ namespace LojaVirtual.Controllers
 {
     public class HomeController : BaseController
     {
-        public ActionResult Index(int? id)
+        public ActionResult Index(int? categoria)
         {
             var model = new Models.HomeIndexViewModel();
-            model.Produtos = new Models.Produto[]
+
+            model.CategoriaSelecionada = categoria;
+            model.Produtos = _dbc.GetProdutos();
+            model.Categorias = _dbc.GetCategorias();
+
+            if (categoria != null)
             {
-                new Models.Produto("Celular Samsung", 1, "CelularSamsung.png", 1),
-                new Models.Produto("TV Led", 2, "tv.png", 2),
-                new Models.Produto("IPhone", 3, "IPhone.jpg", 1),
-                new Models.Produto("Fritadeira", 4, "Fritadeira.jpg", 3),
-                new Models.Produto("Beats", 4, "Beats.jpg", 3),
-                new Models.Produto("Geladeira", 4, "Geladeira.jpg", 3),
-                new Models.Produto("SmartTv", 4, "tv.jpg", 3),
-            };
+                model.Produtos = model.Produtos
+                    .Where(p => p.CategoriaId == categoria)
+                    .ToArray();
+            }
             return View(model);
         }
 
+        public ActionResult AddItem(int id, int? categoria)
+        {
+            var produto = _dbc.GetProdutoPorId(id);
+            var carrinho = GetCarrinho();
+
+            carrinho.Add(produto);
+
+            return RedirectToAction("Index", new { categoria });
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

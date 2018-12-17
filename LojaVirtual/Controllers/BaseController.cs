@@ -1,4 +1,5 @@
-﻿using LojaVirtual.Models;
+﻿using LojaVirtual.DAL;
+using LojaVirtual.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,16 +10,31 @@ namespace LojaVirtual.Controllers
 {
     public class BaseController : Controller
     {
-        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        protected DbContext _dbc = new DbContext();
+
+
+        protected override void OnActionExecuting(
+            ActionExecutingContext filterContext)
         {
+            ViewBag.Carrinho = GetCarrinho();
+
+            base.OnActionExecuting(filterContext);
+
             ViewBag.Categoria = new Categoria[]
             {
                 new Categoria(1, "SmartPhones"),
                 new Categoria(2, "Smart Tv"),
                 new Categoria(3, "Eletro Eletrônico"),
             };
-                
-            base.OnActionExecuting(filterContext);
+        }
+
+        public Carrinho GetCarrinho()
+        {
+            if (Session["carrinho"] == null)
+            {
+                Session["carrinho"] = new Carrinho();
+            }
+            return (Carrinho)Session["carrinho"];
         }
     }
 }

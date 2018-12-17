@@ -152,11 +152,13 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PessoaController.cs" />
+    <Compile Include="DAL\DbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Carrinho.cs" />
     <Compile Include="Models\Categoria.cs" />
+    <Compile Include="Models\CheckoutIndexModel.cs" />
     <Compile Include="Models\HomeIndexViewModel.cs" />
     <Compile Include="Models\CarrinhoItem.cs" />
     <Compile Include="Models\Produto.cs" />

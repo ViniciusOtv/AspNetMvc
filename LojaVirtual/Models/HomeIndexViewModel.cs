@@ -11,21 +11,7 @@ namespace LojaVirtual.Models
 
         public Categoria[] Categorias { get; set; }
 
-        //public string NomeCategoria(Produto produto)
-        //{
+        public int? CategoriaSelecionada { get; set; }
 
-        //    foreach (Categoria item in Categorias)
-        //    {
-        //        if (item.Id == produto.CategoriaId)
-        //        {
-
-        //            return item.Nome;
-
-        //        }
-        //    }
-        //    return "Categoria não existente";
-
-
-        //}
     }
 }

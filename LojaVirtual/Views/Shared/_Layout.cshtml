@@ -37,17 +37,26 @@
                        aria-haspopup="true" aria-expanded="false">
                         Categorias
                     </a>
+                    
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        @foreach (var item in ViewBag.Categoria)
-                        {
-                            <a class="dropdown-item" href="/Home/Index/@item.Id">@item.Nome</a>
-                        }
+                            @foreach (var item in Model.Categorias)
+                            {
+                                if (item.Id == Model.CategoriaSelecionada)
+                                {
+                                    <a class="dropdown-item" href="/Home/Index/@item.Id">@item.Nome</a>
+                                }
+                                else
+                                {
+                                    <a class="dropdown-item" href="/Home/Index/@item.Id">@item.Nome</a>
+                                }
+                            }
+                       
                     </div>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <button class="btn btn-outline-success my-2 my-sm-0" style="background-color: #fffc" type="submit">Carrinho</button>
-            </form>
+            <div class="nav-item">
+                <a class="nav-link" href="/Checkout">Carrinho: @string.Format("{0}", ViewBag?.Carrinho?.QuantidadeDeItens ?? 0)  </a>
+            </div>
         </div>
 
         @*<div class="nav-item">
