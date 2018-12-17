@@ -8,18 +8,18 @@ namespace LojaVirtual.Controllers
 {
     public class HomeController : BaseController
     {
-        public ActionResult Index(int? categoria)
+        public ActionResult Index(int? id)
         {
             var model = new Models.HomeIndexViewModel();
 
-            model.CategoriaSelecionada = categoria;
+            model.CategoriaSelecionada = id;
             model.Produtos = _dbc.GetProdutos();
             model.Categorias = _dbc.GetCategorias();
 
-            if (categoria != null)
+            if (id != null)
             {
                 model.Produtos = model.Produtos
-                    .Where(p => p.CategoriaId == categoria)
+                    .Where(p => p.CategoriaId == id)
                     .ToArray();
             }
             return View(model);

@@ -38,20 +38,22 @@
                         Categorias
                     </a>
                     
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                       
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             @foreach (var item in Model.Categorias)
                             {
                                 if (item.Id == Model.CategoriaSelecionada)
                                 {
-                                    <a class="dropdown-item" href="/Home/Index/@item.Id">@item.Nome</a>
+                                    <a class="dropdown-item" href="/Home/Index/?@item.Id">@item.Nome</a>
                                 }
                                 else
                                 {
                                     <a class="dropdown-item" href="/Home/Index/@item.Id">@item.Nome</a>
                                 }
                             }
-                       
-                    </div>
+
+                        </div>
+                    
                 </li>
             </ul>
             <div class="nav-item">

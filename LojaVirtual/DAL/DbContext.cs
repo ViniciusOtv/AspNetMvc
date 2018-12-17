@@ -25,7 +25,6 @@ namespace LojaVirtual.DAL
                    new Models.Produto("Fritadeira", 4, "Fritadeira.jpg", 3),
                    new Models.Produto("Beats", 4, "Beats.jpg", 3),
                    new Models.Produto("Geladeira", 4, "Geladeira.jpg", 3),
-                   new Models.Produto("SmartTv", 4, "tv.jpg", 3),
                 };
             }
 

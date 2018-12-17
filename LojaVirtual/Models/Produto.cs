@@ -7,7 +7,7 @@ namespace LojaVirtual.Models
 {
     public class Produto
     {
-        static Random _random = new Random();
+        static Random _random = new Random(); 
 
         public string Nome { get; set; }
 
@@ -27,7 +27,7 @@ namespace LojaVirtual.Models
             Nome = nome;
             Preco = _random.Next(10, 100) + (decimal)_random.NextDouble();
             Descricao = "Descrição - " + Nome;
-            Imagem = "Imagens/" + img;
+            Imagem = "/Imagens/" + img;
             CategoriaId = categoriaId;
         }
 
