@@ -8,5 +8,6 @@ namespace LojaVirtual.Models
     public class CheckoutIndexModel
     {
         public Carrinho Carrinho { get; set; }
+
     }
 }

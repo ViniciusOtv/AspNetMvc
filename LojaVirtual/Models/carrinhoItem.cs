@@ -15,15 +15,15 @@ namespace LojaVirtual.Models
 
         public int Quantidade { get; set; }
 
-        public CarrinhoItem(int idProduto, 
+        public CarrinhoItem(
+            int idProduto, 
             string nome, 
-            decimal preco,
-            int qnd = 1)
+            decimal precoUnitario)
         {
-            IdProduto = idProduto;
-            Nome = nome;
-            PrecoUnitario = preco;
-            Quantidade = qnd;
+            this.IdProduto = idProduto;
+            this.Nome = nome;
+            this.Quantidade = 1;
+            this.PrecoUnitario = precoUnitario;
         }
 
         public decimal PrecoTotal

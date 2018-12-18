@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using LojaVirtual.Models;
-using System.Linq;
+
 
 namespace LojaVirtual.DAL
 {
