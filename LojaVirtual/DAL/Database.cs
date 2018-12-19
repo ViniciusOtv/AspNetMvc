@@ -15,7 +15,7 @@ namespace LojaVirtual.DAL
 
          static private string GetConnectionString()
         {
-            return @"Data Source=.\LAB104501\SQLEXPRESS01;Initial Catalog=EcommerceDb; Integrated Security=true;";
+            return @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=EcommerceDb; Integrated Security=true;";
         }
 
         public Database() : base(GetConnectionString())
