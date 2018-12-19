@@ -10,13 +10,14 @@ namespace LojaVirtual.Controllers
 {
     public class BaseController : Controller
     {
-        protected Database _dbc = new Database();
+        protected Database _dal = new Database();
 
 
         protected override void OnActionExecuting(
             ActionExecutingContext filterContext)
         {
             ViewBag.Carrinho = GetCarrinho();
+            ViewBag.Categorias = _dal.Categorias.ToArray();
 
             base.OnActionExecuting(filterContext);
 

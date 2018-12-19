@@ -12,10 +12,12 @@ namespace LojaVirtual.DAL
     {
         public IDbSet<Produto> Produtos { get; set; }
         public IDbSet<Categoria> Categorias { get; set; }
+        public IDbSet<Pedido> Pedidos { get; set; }
+        public IDbSet<ItemPedido> ItemPedidos { get; set; }
 
          static private string GetConnectionString()
         {
-            return @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=EcommerceDb; Integrated Security=true;";
+            return @"Data Source=LAB104501\SQLEXPRESS01;Initial Catalog=EcommerceDb; Integrated Security=true;";
         }
 
         public Database() : base(GetConnectionString())

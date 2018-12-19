@@ -13,8 +13,8 @@ namespace LojaVirtual.Controllers
             var model = new Models.HomeIndexViewModel();
 
             model.CategoriaSelecionada = id;
-            model.Produtos = _dbc.Produtos.ToArray();
-            model.Categorias = _dbc.Categorias.ToArray();
+            model.Produtos = _dal.Produtos.ToArray();
+            model.Categorias = _dal.Categorias.ToArray();
 
             if (id != null)
             {
@@ -27,7 +27,7 @@ namespace LojaVirtual.Controllers
 
         public ActionResult AddItem(int id, int? categoria)
         {
-            var produto = _dbc.Produtos.Find(id);
+            var produto = _dal.Produtos.Find(id);
             var carrinho = GetCarrinho();
 
             carrinho.Add(produto);
