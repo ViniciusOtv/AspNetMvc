@@ -20,13 +20,6 @@ namespace LojaVirtual.Controllers
             ViewBag.Categorias = _dal.Categorias.ToArray();
 
             base.OnActionExecuting(filterContext);
-
-            //ViewBag.Categoria = new Categoria[]
-            //{
-            //    new Categoria(1, "SmartPhones"),
-            //    new Categoria(2, "Smart Tv"),
-            //    new Categoria(3, "Eletro Eletrônico"),
-            //};
         }
 
         public Carrinho GetCarrinho()

@@ -34,6 +34,7 @@ namespace LojaVirtual.Controllers
 
             return RedirectToAction("Index", new { categoria });
         }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

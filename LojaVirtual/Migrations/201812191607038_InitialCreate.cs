@@ -17,7 +17,7 @@ namespace LojaVirtual.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.Produtos",
+                "dbo.Produtoes",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -33,7 +33,7 @@ namespace LojaVirtual.Migrations
         
         public override void Down()
         {
-            DropTable("dbo.Produtos");
+            DropTable("dbo.Produtoes");
             DropTable("dbo.Categorias");
         }
     }
